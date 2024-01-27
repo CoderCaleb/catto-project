@@ -21,4 +21,4 @@ import{_ as J,p as X,o as M,k as l,g as m,h as d,a as H,S as M4,D as t4,A as j,b
                                                   aMMMMMMMMMMMMMMHbDDD#MMMMMMk     
                                                   rQMMMMMMQHDst\\~\`    *owgQMMN.    
                                                    .-:::-^'               '^:;\`    
-                                                                                   `);U4();m.registerPlugin(M4);const j4=()=>M(e4,{children:[M(j,{path:"/",component:a4}),M(j,{path:"/generate",component:H4}),M(R4,{default:!0})]});t4(M(j4,{}),document.body);
+                                                                                   `);U4();m.registerPlugin(M4);const j4=()=>M(e4,{base:"/catto-project",children:[M(j,{path:"/",component:a4}),M(j,{path:"/generate",component:H4}),M(R4,{default:!0})]});t4(M(j4,{}),document.body);
