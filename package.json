@@ -9,7 +9,7 @@
     "build": "vite build --mode production --base /",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy" : "npm run build&&gh-pages -d dist"
+    "deploy": "git add dist -f && git commit -m \"Deployment\" && git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "@nextui-org/react": "^1.0.0-beta.13",
