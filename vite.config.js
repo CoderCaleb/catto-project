@@ -2,7 +2,7 @@ import {defineConfig, splitVendorChunkPlugin} from "vite"
 import preact from "@preact/preset-vite"
 
 export default defineConfig({
-    base: "https://codercaleb.github.io/catto-project/",
+    base: '/catto-project/',
     plugins: [
         preact(),
         splitVendorChunkPlugin(),
@@ -10,7 +10,7 @@ export default defineConfig({
     resolve: {
         alias: {
             "react": "preact/compat",
-            "react-dom": "preact/compat"
+            "react-dom": "preact/compat",
         }
     },
     build: {

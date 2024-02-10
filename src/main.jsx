@@ -17,9 +17,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const App = () => {
     return (
-        <Router base="/catto-project">
-            <AsyncRoute path={"/"} component={Home}/>
-            <AsyncRoute path={"/generate"} component={Generate}/>
+        <Router>
+            <AsyncRoute path={"/catto-project/"} component={Home}/>
+            <AsyncRoute path={"/catto-project/generate"} component={Generate}/>
             <NotFound default/>
         </Router>
     );
