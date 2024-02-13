@@ -3,10 +3,13 @@ import styles from "../styles/home.module.scss";
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import useLocalStorage from "use-local-storage";
-
+import { route } from 'preact-router';
+import { useNavigate } from "react-router";
 import video from "../assets/video/bongocat.mp4";
 
 const Home = () => {
+  const navigate = useNavigate()
+
   const [siteVisited, setSiteVisited] = useLocalStorage("siteVisited", false, {
     syncData: true,
   });
@@ -79,13 +82,13 @@ const Home = () => {
           <source src={video} type="video/mp4" />
         </video>
 
-        <a
+        <button
           id={"generate-button"}
           className={styles.mainButton}
-          href={"/generate"}
+          onClick={()=>navigate("/generate")}
         >
           create your catto
-        </a>
+        </button>
       </main>
     </>
   );

@@ -6,7 +6,9 @@ import { getRandomNumber } from "../lib/getRandomNumber.jsx";
 import download from "../lib/download.jsx";
 import Avatar from "./avatar/avatar.jsx";
 import { Tooltip } from "@nextui-org/react";
-import dayjs from "dayjs";
+import Confetti from "react-confetti";
+import { toast } from "react-toastify";
+import useWindowSize from "../lib/useWindowSize.jsx";
 
 const Generate = () => {
   const [resetClicked, setResetClicked] = useState(false);
@@ -88,6 +90,8 @@ const Generate = () => {
     setHat(getRandomNumber(0, 6));
   };
 
+  const [runConfetti, setRunConfetti] = useState(false);
+  const { width, height } = useWindowSize();
   return (
     <main className={styles.mainContainer}>
       <div className={styles.avatarContainer}>
@@ -172,7 +176,16 @@ const Generate = () => {
             css={{ fontWeight: 500 }}
             hideArrow={true}
           >
-            <button onClick={() => download()}>
+            <button
+              onClick={() => {
+                download();
+                setRunConfetti(true);
+                setTimeout(() => {
+                  setRunConfetti(false);
+                }, 1000);
+                toast.success("You have made and downloaded ur catto 🔥");
+              }}
+            >
               <svg
                 width="36"
                 height="36"
@@ -242,9 +255,8 @@ const Generate = () => {
               </svg>
             </button>
           </Tooltip>
-        </div>          
+        </div>
       </div>
-
       <div className={styles.editContainer}>
         <div className={styles.editList}>
           <button
@@ -515,6 +527,12 @@ const Generate = () => {
           )}
         </div>
       </div>
+      <Confetti
+        width={width}
+        height={height}
+        numberOfPieces={runConfetti ? 200 : 0}
+      />
+      ;
     </main>
   );
 };

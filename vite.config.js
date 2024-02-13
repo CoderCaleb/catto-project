@@ -2,7 +2,7 @@ import {defineConfig, splitVendorChunkPlugin} from "vite"
 import preact from "@preact/preset-vite"
 
 export default defineConfig({
-    base: '/catto-project/',
+    base: '/catto-project',
     plugins: [
         preact(),
         splitVendorChunkPlugin(),

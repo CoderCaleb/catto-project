@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router";
 import styles from "../styles/code.module.scss";
+import { route } from 'preact-router';
 
 const NotFound = () => {
+    const navigate = useNavigate()
+
     return (
         <main className={styles.container}>
             <h1 className={styles.code}>
@@ -11,9 +15,9 @@ const NotFound = () => {
                 oops! this site doesn't exist
             </p>
 
-            <a className={styles.backButton} href={"/"}>
+            <button className={styles.backButton} onClick={()=>navigate("/")}>
                 back to main site
-            </a>
+            </button>
         </main>
     );
 }

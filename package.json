@@ -2,11 +2,11 @@
   "name": "bongocat",
   "private": true,
   "version": "5.0.0",
-  "homepage": "https://codercaleb.github.io/catto-project/",
+  "homepage": "https://codercaleb.github.io/catto-project",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --mode production --base /",
+    "build": "vite build --mode production",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "git add dist -f && git commit -m \"Deployment\" && git subtree push --prefix dist origin gh-pages"
@@ -19,6 +19,10 @@
     "preact-async-route": "^2.2.1",
     "preact-router": "^4.1.0",
     "react": "^18.2.0",
+    "react-confetti": "^6.1.0",
+    "react-router": "^6.22.0",
+    "react-router-dom": "^6.22.0",
+    "react-toastify": "^10.0.4",
     "sass": "^1.62.0",
     "use-local-storage": "^3.0.0"
   },
